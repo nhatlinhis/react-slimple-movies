@@ -2,12 +2,12 @@ import React from "react";
 
 const MovieCard = ({ item }) => {
   const { title, release_date, poster_path, vote_average } = item;
+
   return (
-    <div className="movie-card flex flex-col rounded-lg p-3 bg-slate-800 text-white h-full select-none ">
+    <div className="movie-card flex flex-col rounded-lg p-3 bg-slate-800 text-white h-full select-none w-[200px]">
       <img
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-        className="w-f h-[250px] object-cover rounded-lg mb-5"
-        alt=""
+        className="w-full h-[250px] object-cover rounded-lg mb-5"
       />
       <div className="flex flex-col flex-1">
         <h3 className="text-l font-bold mb-3">{title}</h3>

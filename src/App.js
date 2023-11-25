@@ -1,13 +1,15 @@
 import { Fragment } from "react";
 import "swiper/scss";
 import MovieList from "./components/movies/MovieList";
+import { flushSync } from "react-dom";
+import { FOCUSABLE_SELECTOR } from "@testing-library/user-event/dist/utils";
 
 function App() {
   return (
     <Fragment>
       <header className="header flex items-center justify-center gap-x-5 text-white py-10 mb-5">
-        <span className="text-primary">Home</span>
-        <span>Movies</span>
+        <span className="text-primary cursor-pointer">Home</span>
+        <span className="cursor-pointer ">Movies</span>
       </header>
       <section className="banner h-[500px] page-container mb-20">
         <div className=" w-full h-full rounded-lg relative">
@@ -60,6 +62,11 @@ function App() {
         </h2>
         <MovieList type="upcoming"></MovieList>
       </section>
+      <div className="bg-slate-700">
+        <span className="p-2 text-white flex items-center justify-center">
+          Design by Nguyen Nhat Linh
+        </span>
+      </div>
     </Fragment>
   );
 }
