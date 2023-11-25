@@ -1,21 +1,24 @@
 import React from "react";
 
-const MovieCard = () => {
+const MovieCard = ({ item }) => {
+  const { title, release_date, poster_path, vote_average } = item;
   return (
-    <div className="movie-card rounded-lg p-3 bg-slate-800 text-white">
+    <div className="movie-card flex flex-col rounded-lg p-3 bg-slate-800 text-white h-full select-none ">
       <img
-        src="https://imageio.forbes.com/blogs-images/markhughes/files/2019/04/AVENGERS-ENDGAME-poster-DOLBY-CINEMA-1.jpg?height=1039&width=711&fit=bounds"
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
         className="w-f h-[250px] object-cover rounded-lg mb-5"
         alt=""
       />
-      <h3 className="text-l font-bold mb-3">Spiderman: Homecoming</h3>
-      <div className="flex items-center justify-between text-sm opacity-50 mb-10">
-        <span>2017</span>
-        <span>7.4</span>
+      <div className="flex flex-col flex-1">
+        <h3 className="text-l font-bold mb-3">{title}</h3>
+        <div className="flex items-center justify-between text-sm opacity-50 mb-10">
+          <span>{new Date(release_date).getFullYear()}</span>
+          <span>{vote_average}</span>
+        </div>
+        <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full mt-auto">
+          Watch now
+        </button>
       </div>
-      <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
-        Watch now
-      </button>
     </div>
   );
 };

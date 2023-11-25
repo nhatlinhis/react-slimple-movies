@@ -1,8 +1,6 @@
 import { Fragment } from "react";
-import { NavLink } from "react-router-dom";
-import MovieCard from "./components/movies/MovieCard";
-import { SwiperSlide, Swiper } from "swiper/react";
-import "Swiper/scss";
+import "swiper/scss";
+import MovieList from "./components/movies/MovieList";
 
 function App() {
   return (
@@ -42,72 +40,25 @@ function App() {
         <h2 className="capitalize text-white mb-5 text-2xl front-bold">
           Now playing
         </h2>
-        <div className="movie-list">
-          <Swiper grabCurser={"True"} spaceBetween={40} slidesPerView={"auto"}>
-            <SwiperSlide>
-              <MovieCard></MovieCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <MovieCard></MovieCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <MovieCard></MovieCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <MovieCard></MovieCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <MovieCard></MovieCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <MovieCard></MovieCard>
-            </SwiperSlide>
-          </Swiper>
-        </div>
+        <MovieList></MovieList>
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-5 text-2xl front-bold">
           Top rated movies
         </h2>
-        <div className="movie-list grid grid-cols-4 gap-10">
-          <div className="movie-card rounded-lg p-3 bg-slate-800 text-white">
-            <img
-              src="https://imageio.forbes.com/blogs-images/markhughes/files/2019/04/AVENGERS-ENDGAME-poster-DOLBY-CINEMA-1.jpg?height=1039&width=711&fit=bounds"
-              className="w-f h-[250px] object-cover rounded-lg mb-5"
-              alt=""
-            />
-            <h3 className="text-l font-bold mb-3">Spiderman: Homecoming</h3>
-            <div className="flex items-center justify-between text-sm opacity-50 mb-10">
-              <span>2017</span>
-              <span>7.4</span>
-            </div>
-            <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
-              Watch now
-            </button>
-          </div>
-        </div>
+        <MovieList type="top_rated"></MovieList>
       </section>
       <section className="movies-layout page-container pb-20">
         <h2 className="capitalize text-white mb-5 text-2xl front-bold">
           Trending
         </h2>
-        <div className="movie-list grid grid-cols-4 gap-10">
-          <div className="movie-card rounded-lg p-3 bg-slate-800 text-white">
-            <img
-              src="https://imageio.forbes.com/blogs-images/markhughes/files/2019/04/AVENGERS-ENDGAME-poster-DOLBY-CINEMA-1.jpg?height=1039&width=711&fit=bounds"
-              className="w-f h-[250px] object-cover rounded-lg mb-5"
-              alt=""
-            />
-            <h3 className="text-l font-bold mb-3">Spiderman: Homecoming</h3>
-            <div className="flex items-center justify-between text-sm opacity-50 mb-10">
-              <span>2017</span>
-              <span>7.4</span>
-            </div>
-            <button className="py-3 px-6 rounded-lg capitalize bg-primary w-full">
-              Watch now
-            </button>
-          </div>
-        </div>
+        <MovieList type="popular"></MovieList>
+      </section>
+      <section className="movies-layout page-container pb-20">
+        <h2 className="capitalize text-white mb-5 text-2xl front-bold">
+          Up coming
+        </h2>
+        <MovieList type="upcoming"></MovieList>
       </section>
     </Fragment>
   );
