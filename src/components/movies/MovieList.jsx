@@ -3,7 +3,6 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import MovieCard from "./MovieCard";
 import { fetcher } from "../../config";
 import useSWR from "swr";
-import "swiper/scss";
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=305e809e770e39392a1a79bc909fdfc4
 
