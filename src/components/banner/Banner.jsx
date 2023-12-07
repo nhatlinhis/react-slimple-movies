@@ -10,7 +10,6 @@ const Banner = () => {
   );
   //Hạn chế loading.
   const movies = data?.results || [];
-  console.log("Banner ~ miovies", movies);
 
   return (
     <section className="banner h-[500px] page-container mb-20 overflow-hidden">

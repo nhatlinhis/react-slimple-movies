@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import Banner from "./components/banner/Banner";
 import Header from "./components/layout/Header";
 import MoviePage from "./pages/MoviePage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           }
         ></Route>
         <Route path="/movies" element={<MoviePage></MoviePage>}></Route>
+        <Route
+          path="/movies/:movieId"
+          element={<MovieDetailsPage></MovieDetailsPage>}
+        ></Route>
       </Routes>
 
       {/* <div className="bg-slate-700">

@@ -3,10 +3,11 @@ import MovieList from "../components/movies/MovieList";
 import { fetcher } from "../config";
 import useSWR from "swr";
 import MovieCard from "../components/movies/MovieCard";
+import { apiKey } from "../config";
 
 const MoviePage = () => {
   const { data, error, isLoading } = useSWR(
-    `https://api.themoviedb.org/3/movie/popular?api_key=305e809e770e39392a1a79bc909fdfc4`,
+    `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`,
     fetcher
   );
   const movies = data?.results || [];
